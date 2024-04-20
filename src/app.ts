@@ -4,7 +4,6 @@ import express from 'express';
 import { v4 as uuid } from 'uuid';
 
 const app = express();
-const port = 3001;
 
 app.use(express.json());
 
@@ -33,4 +32,5 @@ app.get('/join', async (req, res) => {
   res.send({ attendeeResponse, meetingResponse });
 });
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server listening on port ${port}`));
